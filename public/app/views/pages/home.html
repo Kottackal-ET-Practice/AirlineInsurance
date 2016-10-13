@@ -27,7 +27,7 @@
                             <div id="formstatus"></div>
                             <div class="Contact-us">
                                 <div class="form-group">
-                                    <label for="source" class="col-sm-4 control-label">Source</label>
+                                    <label for="source" class="col-sm-4 control-label">From</label>
                                     <div class="form-input col-md-12">
                                         <select id="source" name="source" autofocus ng-options="source as source.place for source in sourceOptions" ng-model="quoteData.source" ng-required="true" ng-change="getDestination(quoteData.source)">
                                             <option value=""  disabled selected hidden>-- Source --</option>
@@ -38,7 +38,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="destination" class="col-sm-4 control-label">Destination</label>
+                                    <label for="destination" class="col-sm-4 control-label">To</label>
                                     <div class="form-input col-md-12">
                                         <select id="destination" name="destination" ng-options="destination as destination.place for destination in destinationOptions" ng-model="quoteData.destination" ng-required="true">
                                             <option value="" disabled selected hidden>-- Destination --</option>

@@ -29,7 +29,7 @@ app.use(morgan('dev'));
 // For serving static assets
 app.use(express.static(__dirname + '/public',{ maxAge: oneDay }));
 
-// 
+// For serving static assets
 app.use(express.static(__dirname + '/bower_components'));
 
 
