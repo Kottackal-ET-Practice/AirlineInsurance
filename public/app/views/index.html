@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp">
+
+<head>
+    <baser href='/'>
+        <title>Airline Insurance</title>
+        <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+
+        <script type="text/javascript" src="angular/angular.min.js"></script>
+        <script type="text/javascript" src="angular-route/angular-route.min.js"></script>
+
+        <!-- Services -->
+        <script type="text/javascript" src="app/services/authService.js"></script>
+        <script type="text/javascript" src="app/services/userService.js"></script>
+
+        <!-- Controllers -->
+        <script type="text/javascript" src="app/controllers/mainCtrl.js"></script>
+        <script type="text/javascript" src="app/controllers/userCtrl.js"></script>
+        <script type="text/javascript" src="app/controllers/quoteCtrl.js"></script>
+         <script type="text/javascript" src="app/controllers/insuranceCtrl.js"></script>
+
+        <script type="text/javascript" src="app/app.routes.js"></script>
+        <script type="text/javascript" src="app/app.js"></script>
+</head>
+
+<body ng-controller="MainController as main">
+    <!-- Header Start -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- header Nav Start -->
+                    <nav class="navbar navbar-default">
+                        <div class="container-fluid">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <a class="navbar-brand" href="/">
+                                    <img src="img/logo.png" alt="Logo">
+                                </a>
+                            </div>
+                            <ul class="nav navbar-nav navbar-left">
+                                <li><a href="/">Home</a></li>
+                                <li ng-if="main.loggedIn"><a href="/insured" >Insured</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li ng-if="!main.loggedIn"><a href="/login">Login</a></li>
+                                <li ng-if="!main.loggedIn"><a href="/signup">Signup</a></li>
+                                <li ng-if="main.loggedIn"><a href="#">Hello {{ main.user.username}}</a></li>
+                                <li ng-if="main.loggedIn"><a href="#" ng-click="main.doLogout()">Logout</a></li>
+                            </ul>
+
+                            <!-- /.navbar-collapse -->
+                        </div>
+                        <!-- /.container-fluid -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header close -->
+
+    <main class="container-fluid">
+        <div ng-view></div>
+    </main>
+
+    <!-- footer Start -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="footer-manu">
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#">How it works</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Terms</a></li>
+                        </ul>
+                    </div>
+                    <p>Copyright &copy;</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

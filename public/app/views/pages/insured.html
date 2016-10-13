@@ -1,0 +1,48 @@
+<!-- Plans -->
+<section id="plans" class="price-plans" ng-controller="InsuranceController">
+	<div class="row" ng-if="main.user.username == name">
+		<div class="colmd-12" ng-repeat="x in content">
+			
+				<div class="row" ng-if="main.user.username == x.name">
+					<!-- item -->
+					<div class="col-md-4 text-center col-md-offset-4 insured">
+						<div class="panel panel-danger panel-pricing">
+							<div class="panel-heading">
+								<i class="fa fa-paper-plane"></i>
+								<h3>Insured</h3>
+							</div>
+							<ul class="list-group text-center">
+								<li class="list-group-item"><i class="fa fa-check"></i> {{x.source}}</li>
+								<li class="list-group-item"><i class="fa fa-check"></i> {{x.destination}}</li>
+							</ul>
+						</div>
+					</div>
+					<!-- /item -->
+				</div>
+			
+
+		</div>
+	</div>
+
+
+	<div class="row" ng-if="main.user.username != name">
+		<div class="colmd-12">
+			<div class="row">
+				<!-- item -->
+				<div class="col-md-4 text-center col-md-offset-4 insured">
+					<div class="panel panel-danger panel-pricing">
+						<div class="panel-heading">
+							<i class="fa fa-paper-plane"></i>
+							<h3> Not Insured</h3>
+						</div>
+					</div>
+				</div>
+				<!-- /item -->
+
+			</div>
+		</div>
+	</div>
+
+
+
+</section>

@@ -1,0 +1,126 @@
+<section id="Page-title" class="Page-title-Style2">
+    <div class="color-overlay"></div>
+    <div class="container inner-img">
+        <div class="row">
+            <div class="Page-title">
+                <div class="col-md-12 text-center">
+                    <div class="title-text">
+                        <h6>Great Service</h6>
+                        <h2 class="page-title">Get a quote</h2>
+                        <h1>{{main.user.username}}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="get-a-quote" class="light-wrapper">
+    <div class="container inner">
+        <div class="row" ng-controller="QuoteCreateController">
+            <div class="col-md-8 col-md-offset-2 get-quote-section">
+
+                <div class="get-quote-form">
+
+                    <form class="leave-comment contact-form" autocomplete="on" id="quote-form" name="quoteForm" class="form-horizontal" role="form"
+                        method="post" ng-submit="quoteCreate()" novalidate>
+                        <fieldset>
+                            <div id="formstatus"></div>
+                            <div class="Contact-us">
+                                <div class="form-group">
+                                    <label for="source" class="col-sm-4 control-label">Source</label>
+                                    <div class="form-input col-md-12">
+                                        <select id="source" name="source" autofocus ng-options="source as source.place for source in sourceOptions" ng-model="quoteData.source" ng-required="true" ng-change="getDestination(quoteData.source)">
+                                            <option value=""  disabled selected hidden>-- Source --</option>
+                                        </select>
+                                        <div class="error" ng-show="quoteForm.source.$touched && quoteForm.source.$invalid">
+                                            <small style="color:red; display:block;">Select a Source</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="destination" class="col-sm-4 control-label">Destination</label>
+                                    <div class="form-input col-md-12">
+                                        <select id="destination" name="destination" ng-options="destination as destination.place for destination in destinationOptions" ng-model="quoteData.destination" ng-required="true">
+                                            <option value="" disabled selected hidden>-- Destination --</option>
+                                            
+                                        </select>
+                                        <div class="error" ng-show="quoteForm.destination.$touched && quoteForm.destination.$invalid">
+                                            <small style="color:red; display:block;">Select a destination</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="persons" class="col-sm-4 control-label">No of persons</label>
+                                    <div class="form-input col-md-12">
+                                        <input type="number" name="persons" class="form-control" id="persons" placeholder="No. of Persons" ng-model="quoteData.persons"
+                                            ng-required="true" min="1">
+                                        <div class="error" ng-show="quoteForm.persons.$touched && quoteForm.persons.$invalid">
+                                            <small style="color:red; display:block;">Enter no of persons</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="date" class="col-sm-4 control-label">Travel Date</label>
+                                    <div class="form-input col-md-12">
+                                        <input type="date" name="date" class="form-control" id="date" placeholder="Date of travel yyyy-MM-dd" ng-model="quoteData.date" ng-required="true"
+                                            min="{{dates.minDate | date:'yyyy-MM-dd'}}" max="{{dates.maxDate | date:'yyyy-MM-dd'}}">
+                                        <div class="error" ng-show="quoteForm.date.$touched && quoteForm.date.$invalid">
+                                            <small style="color:red; display:block;">Select a date of travel</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="time" class="col-sm-2 control-label">Time</label>
+                                    <div class="form-input col-md-12">
+                                        <input type="time" name="time" class="form-control" id="time" placeholder="HH:mm:ss" ng-model="quoteData.time" ng-required="true">
+                                        <div class="error" ng-show="quoteForm.time.$touched && quoteForm.time.$invalid">
+                                            <small style="color:red; display:block;">Enter a time</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-submit col-md-12">
+                                    <button type="submit" id="submit" class="btn common-btn" ng-disabled="quoteForm.$invalid">Generate Quote</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+
+
+            <!--Pricing Table-->
+
+            <!-- Plans -->
+            <section id="plans" class="price-plans" ng-hide="responseFlag == false">
+
+                <div class="row">
+                    <!-- item -->
+                    <div class="col-md-4 text-center col-md-offset-4">
+                        <div class="panel panel-danger panel-pricing">
+                            <div class="panel-heading">
+                                <i class="fa fa-paper-plane"></i>
+                                <h3>Plan</h3>
+                            </div>
+                            <div class="panel-body text-center">
+                                <i class="fa fa-inr"><p><strong>{{total}}</strong></p></i>
+                                
+                            </div>
+                            <ul class="list-group text-center">
+                                <li class="list-group-item"><i class="fa fa-check"></i> Personal use</li>
+                                <li class="list-group-item"><i class="fa fa-check"></i> 27/7 support</li>
+                            </ul>
+                            <div class="panel-footer">
+                                <a ng-if="!main.loggedIn" class="btn btn-lg btn-block btn-danger" href="/login">BUY NOW!</a>
+                                <a ng-if="main.loggedIn" class="btn btn-lg btn-block btn-danger" ng-click="insuranceCreate()" href="/insured">BUY NOW!</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /item -->
+
+                </div>
+
+            </section>
+        </div>
+    </div>
+</section>
