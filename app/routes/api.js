@@ -893,7 +893,6 @@ module.exports = function (app, express) {
         // var token = req.body.token || req.params.token || req.query.token || req.headers['x-access-token'];
         var token = req.query['x-access-token'] || req.headers['x-access-token'];
 
-        console.log("token: " + token);
 
         // check if token exist
         if (token) {
@@ -954,9 +953,6 @@ module.exports = function (app, express) {
             name: req.body.name,
             insured: req.body.insured
         });
-        console.log('checking');
-        console.log(req.body.name);
-        console.log(req.body.insured);
         insurance.save(function (err) {
 
             if (err) {

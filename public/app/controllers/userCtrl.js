@@ -1,3 +1,4 @@
+// Registeration Page Controller
 angular.module('userCtrl', ['userService'])
     .controller('UserCreateController', function(User, $location, $window){
         var vm = this;

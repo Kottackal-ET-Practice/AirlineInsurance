@@ -43,7 +43,6 @@ angular.module('quoteCtrl', [])
             "sourceId": 4
         }]; // Option destination
 
-        console.log(destinationList);
         $scope.sourceOptions = sourceList;
         $scope.destinationOptions = [];
         var num = 2;
@@ -96,9 +95,8 @@ angular.module('quoteCtrl', [])
                     console.log(config);
                 });
         };
+        // Apply for insurance
         $scope.insuranceCreate = function () {
-                
-            console.log($rootScope.userDetails.username);
             var travelInfo = {
                 'source': $scope.quoteData.source.place,
                 'destination': $scope.quoteData.destination.place,
