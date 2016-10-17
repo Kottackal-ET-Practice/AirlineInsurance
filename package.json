@@ -8,11 +8,15 @@
     "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["airline","insurance"],
+  "keywords": [
+    "airline",
+    "insurance"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
+    "bluebird": "^3.4.6",
     "body-parser": "^1.15.2",
     "compression": "^1.6.2",
     "express": "^4.14.0",

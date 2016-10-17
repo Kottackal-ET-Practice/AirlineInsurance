@@ -1,6 +1,7 @@
 // Whole-script strict mode syntax
 'use strict';
 
+// Initialization of modules
 var express     = require('express');
 var bodyParser  = require('body-parser');
 var morgan      = require('morgan');
@@ -14,16 +15,17 @@ var app         = express();
 
 var oneDay      = 86400000;
 
-// 
+// For parsing the form values
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+
 app.use(bodyParser.json());
 
 // Gzip compressing 
 app.use(compression());
 
-// log every request to the console
+// Log every request to the console
 app.use(morgan('dev'));
 
 // For serving static assets
@@ -33,7 +35,7 @@ app.use(express.static(__dirname + '/public',{ maxAge: oneDay }));
 app.use(express.static(__dirname + '/bower_components'));
 
 
-var api = require('./app/routes/api')(app, express);
+var api = require('./app/routes/router')(app, express);
 
 app.use('/api', api);
 

@@ -30,10 +30,10 @@
                                     <label for="source" class="col-sm-4 control-label">From</label>
                                     <div class="form-input col-md-12">
                                         <select id="source" name="source" autofocus ng-options="source as source.place for source in sourceOptions" ng-model="quoteData.source" ng-required="true" ng-change="getDestination(quoteData.source)">
-                                            <option value=""  disabled selected hidden>-- Source --</option>
+                                            <option value=""  disabled selected hidden>-- Residing Place --</option>
                                         </select>
                                         <div class="error" ng-show="quoteForm.source.$touched && quoteForm.source.$invalid">
-                                            <small style="color:red; display:block;">Select a Source</small>
+                                            <small style="color:red; display:block;">Select a Place</small>
                                         </div>
                                     </div>
                                 </div>
@@ -41,11 +41,11 @@
                                     <label for="destination" class="col-sm-4 control-label">To</label>
                                     <div class="form-input col-md-12">
                                         <select id="destination" name="destination" ng-options="destination as destination.place for destination in destinationOptions" ng-model="quoteData.destination" ng-required="true">
-                                            <option value="" disabled selected hidden>-- Destination --</option>
+                                            <option value="" disabled selected hidden>-- Travelling Place --</option>
                                             
                                         </select>
                                         <div class="error" ng-show="quoteForm.destination.$touched && quoteForm.destination.$invalid">
-                                            <small style="color:red; display:block;">Select a destination</small>
+                                            <small style="color:red; display:block;">Select a Place</small>
                                         </div>
                                     </div>
                                 </div>
@@ -70,7 +70,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="time" class="col-sm-2 control-label">Time</label>
+                                    <label for="time" class="col-sm-4 control-label">Destination Time</label>
                                     <div class="form-input col-md-12">
                                         <input type="time" name="time" class="form-control" id="time" placeholder="HH:mm:ss" ng-model="quoteData.time" ng-required="true">
                                         <div class="error" ng-show="quoteForm.time.$touched && quoteForm.time.$invalid">

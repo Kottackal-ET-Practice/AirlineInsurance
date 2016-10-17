@@ -1,73 +1,94 @@
 <div class="container" ng-controller="UserCreateController as user">
-    <div class="row">
-        <div class="col-sm-12 col-md-8 col-md-offset-2 signup">
+	<div class="row">
+		<div class="col-sm-12 col-md-8 col-md-offset-2 signup">
 
-            <h1>Registration</h1>
+			<h1>Registration</h1>
 
-            <form class="form-horizontal form-signup" role="form" name="register" method="post" ng-submit="user.singupUser()" novalidate>
-                <div class="form-group">
-                    <label for="name" class="col-sm-3 control-label">Name</label>
-                    <div class="col-sm-9">
-                        <input type="text" id="name" placeholder="Full Name" class="form-control" autofocus ng-model="user.userData.name" " ng-required="true">                      
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="username" class="col-sm-3 control-label">User Name</label>
-                    <div class="col-sm-9">
-                        <input type="text" id="username" placeholder="Username" class="form-control" ng-model="user.userData.username" " ng-required="true">                      
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="password" class="col-sm-3 control-label">Password</label>
-                    <div class="col-sm-9">
-                        <input type="password" id="password" placeholder="Password" class="form-control" ng-model="user.userData.password" " ng-required="true">                      
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="email" class="col-sm-3 control-label">Email</label>
-                    <div class="col-sm-9">
-                        <input type="email" id="email" placeholder="Email" class="form-control" ng-model="user.userData.email" " ng-required="true">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="birthDate" class="col-sm-3 control-label">Date of Birth</label>
-                    <div class="col-sm-9">
-                        <input type="date" id="birthDate" class="form-control" ng-model="user.userData.dob" " ng-required="true">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="country" class="col-sm-3 control-label">Country</label>
-                    <div class="col-sm-9">
-                        <input type="text" id="country" class="form-control" ng-model="user.userData.country" " ng-required="true">
-                    </div>
-                </div>
-                <!-- /.form-group -->
-                <div class="form-group">
-                    <label class="control-label col-sm-3">Gender</label>
-                    <div class="col-sm-6">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <label class="radio-inline">
+			<form class="form-horizontal form-signup" role="form" name="register" method="post" ng-submit="user.singupUser()" novalidate>
+				<div class="form-group">
+					<label for="name" class="col-sm-3 control-label">Name</label>
+					<div class="col-sm-9">
+						<input type="text" id="name" name="name" placeholder="Full Name" class="form-control" autofocus ng-model="user.userData.name"
+							ng-required="true">
+						<div class="error" ng-show="register.name.$touched && register.name.$invalid">
+							<small style="color:red; display:block;">Name Required</small>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="username" class="col-sm-3 control-label">User Name</label>
+					<div class="col-sm-9">
+						<input type="text" id="username" name="username" placeholder="Username" class="form-control" ng-model="user.userData.username"
+							ng-required="true">
+						<div class="error" ng-show="register.username.$touched && register.username.$invalid">
+							<small style="color:red; display:block;">Username Required</small>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="password" class="col-sm-3 control-label">Password</label>
+					<div class="col-sm-9">
+						<input type="password" id="password" name="password" placeholder="Password" class="form-control" ng-model="user.userData.password"
+							ng-required="true">
+						<div class="error" ng-show="register.password.$touched && register.password.$invalid">
+							<small style="color:red; display:block;">Password Required</small>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="email" class="col-sm-3 control-label">Email</label>
+					<div class="col-sm-9">
+						<input type="email" id="email" name="email" placeholder="Email" class="form-control" ng-model="user.userData.email" ng-required="true">
+						<div class="error" ng-show="register.email.$touched && register.email.$invalid">
+							<small style="color:red; display:block;">Email Required</small>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="birthDate" class="col-sm-3 control-label">Date of Birth</label>
+					<div class="col-sm-9">
+						<input type="date" id="birthDate" name="date" class="form-control" ng-model="user.userData.dob" ng-required="true">
+						<div class="error" ng-show="register.date.$touched && register.date.$invalid">
+							<small style="color:red; display:block;">Date of birth Required</small>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="country" class="col-sm-3 control-label">Country</label>
+					<div class="col-sm-9">
+						<input type="text" id="country" name="country" class="form-control" ng-model="user.userData.country" ng-required="true">
+						<div class="error" ng-show="register.country.$touched && register.country.$invalid">
+							<small style="color:red; display:block;">Country Required</small>
+						</div>
+					</div>
+				</div>
+				<!-- /.form-group -->
+				<div class="form-group">
+					<label class="control-label col-sm-3">Gender</label>
+					<div class="col-sm-6">
+						<div class="row">
+							<div class="col-sm-4">
+								<label class="radio-inline">
                                     <input type="radio" id="femaleRadio" value="Female" ng-model="user.userData.gender">Female
                                 </label>
-                            </div>
-                            <div class="col-sm-4">
-                                <label class="radio-inline">
+							</div>
+							<div class="col-sm-4">
+								<label class="radio-inline">
                                     <input type="radio" id="maleRadio" value="Male" ng-model="user.userData.gender">Male
                                 </label>
-                            </div>
-                            <div class="col-sm-4">
-                                <label class="radio-inline">
+							</div>
+							<div class="col-sm-4">
+								<label class="radio-inline">
                                     <input type="radio" id="uncknownRadio" value="Unknown" ng-model="user.userData.gender">Unknown
                                 </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-                <button type="submit" class="btn btn-danger" ng-disabled="register.$invalid">Signup</button>
+				<button type="submit" class="btn btn-danger" ng-disabled="register.$invalid">Signup</button>
 
-            </form>
-        </div>
-    </div>
+			</form>
+		</div>
+	</div>
 </div>

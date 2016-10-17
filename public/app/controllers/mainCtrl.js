@@ -1,3 +1,4 @@
+// Controller for authentication check and logout
 angular.module('mainCtrl', [])
     .controller('MainController', function($rootScope, $location, Auth){
 
@@ -30,6 +31,8 @@ angular.module('mainCtrl', [])
                         $location.path('/');
                     } else {
                         vm.error = data.message;
+                        vm.errorFlag = true;
+                        console.log(vm.error);
                     }
                 });
         };

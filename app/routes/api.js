@@ -26,7 +26,7 @@ module.exports = function (app, express) {
     // Create route handlers
     var api = express.Router();
 
-    // Registeration
+    // User Registeration
     api.post('/signup', function (req, res) {
 
         var user = new User({
@@ -41,7 +41,7 @@ module.exports = function (app, express) {
 
         });
 
-        var token = createToken(user);
+        var token = createToken(user); //Create a token
 
         user.save(function (err) {
 
@@ -52,7 +52,7 @@ module.exports = function (app, express) {
             res.json({
                 success: true,
                 message: 'User has been created',
-                token: token
+                token: token // send the token
             });
 
         });
@@ -844,7 +844,7 @@ module.exports = function (app, express) {
 
     });
 
-    // Login
+    // User Login
     api.post('/login', function (req, res) {
 
         User.findOne({

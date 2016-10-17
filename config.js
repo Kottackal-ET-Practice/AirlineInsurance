@@ -1,4 +1,7 @@
+// Configuration file for the application
+
 'use strict';
+
 module.exports = {
     // set the server port
     "port": process.env.PORT || 3000,
