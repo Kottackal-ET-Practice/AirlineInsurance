@@ -11,19 +11,19 @@ The user will get a quote for travel insurance, by filling up a form on home pag
 
 
 ## Code Structure
-The *server.js* file start the server and listen for requests. All the call to the server is handled by the *router.js* file in *'app/routes/'*.
+The *server.js* file start the server and listen for requests. All the call to the server is handled by the *router.js* file in *app/routes/'*.
 *router.js* calls the corresponding controllers for the request.
 
-1. On user registeration it will call the signup module in *register.js* ('app/controllers/'). 
-The signup module handels the registeration of the user.
+1. On user registration it will call the signup module in *register.js* ('app/controllers/').
+The signup module handles the registration of the user.
 The database schema is mentioned in the *login.js* ('app/models/').
-2. On user login it will call the signin module in *login.js* ('app/controllers/'). 
-The signin module do the authentication check for the user.
+2. On user login it will call the signin module in *login.js* ('app/controllers/').
+The signin module does the authentication check for the user.
 The database schema is mentioned in the *login.js* ('app/models/').
-3. For quote generation it will transfer the call to *quote.js* ('app/controllers/'). 
-The quote controller fetches the data from the weather api and generates quote.
+3. For quote generation it will transfer the call to *quote.js* ('app/controllers/').
+The quote controller fetches the data from the weather API and generates the quote.
 The database schema is mentioned in the *weather.js* ('app/models/').
-4. To check for the previous insurances, call getInsurance module in *insurance.js* ('app/controllers/'). 
+4. To check for the previous insurances, call getInsurance module in *insurance.js* ('app/controllers/').
 The getInsurance fetches the details from the database and return it.
 The database schema is mentioned in the *insurance.js* ('app/models/').
 5. When apply for an insurance, call createInsurance module in *insurance.js* ('app/controllers/').
@@ -42,5 +42,10 @@ $ bower install
 $ npm start
 ```
 ### Setup an https secure connection
- 1. Import *ca.crt* file from 'ssl/' into your browser's certificate manager.
+ 1. Import *ca.crt*  file from 'ssl/' folder into your browser's certificate manager.
  ![certificate Manager](./images/certificate_manager.png)
+
+### Browser Url
+```
+https://localhost:9030
+```
