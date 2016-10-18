@@ -3,8 +3,10 @@
 'use strict';
 
 module.exports = {
-    // set the server port
-    "port": process.env.PORT || 3000,
+    // set the http server port
+    "httpPort": process.env.PORT || 9000,
+    // set the http server port
+    "httpsPort": process.env.PORT || 9030,
     // set the server host
     "host": "127.0.0.1",
     // adddress of the Database
