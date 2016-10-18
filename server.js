@@ -22,6 +22,8 @@ var app = express();
 
 var oneDay = 86400000;
 
+app.set('httpsPort', config.httpsPort);
+
 var httpsOptions = {
     cert: fs.readFileSync(path.join(__dirname, 'ssl', 'server.crt')),
     key: fs.readFileSync(path.join(__dirname, 'ssl', 'server.key'))
@@ -54,8 +56,16 @@ app.use(express.static(__dirname + '/bower_components'));
 function requireHTTPS(req, res, next) {
     if (!req.secure) {
         //This should work for local development as well
-        console.log(req.get('host'));
-        return res.redirect('https://localhost:' + config.httpsPort + req.url);
+        var host = req.get('host');
+
+        // var hostname = req.hostname;
+        
+        // replace the port in the host
+        host = host.replace(/:\d+$/, ":" + app.get('httpsPort'));
+        // determine the redirect destination
+        var destination = ['https://', host, req.url].join('');
+
+        return res.redirect(destination);
     }
     next();
 }

@@ -286,7 +286,10 @@ exports.quoteCreate = function (req, res) {
     function validationPersonsDateTime(persons, date, time) {
 
         //Checks No: of Persons
-        if (persons >= 1) {
+        if (persons >= 1) { 
+            var hours;
+            var minutes;
+            var currenttime;
             //Set Today's Date
             var now = new Date();
             var today = now.toISOString().slice(0, 10);
