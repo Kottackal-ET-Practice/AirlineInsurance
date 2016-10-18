@@ -43,4 +43,4 @@ $ npm start
 ```
 ### Setup an https secure connection
  1. Import *ca.crt* file from 'ssl/' into your browser's certificate manager.
- ![certificate Manager](images/certificate_manager.png)
+ ![certificate Manager](./images/certificate_manager.png)
