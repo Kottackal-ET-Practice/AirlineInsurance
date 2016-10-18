@@ -11,8 +11,8 @@ The user will get a quote for travel insurance, by filling up a form on home pag
 
 
 ## Code Structure
-The *server.js* file start the server and listen for requests. All the call to the server is handled by the 'router.js' file in 'app/routes/'.
-router.js calls the corresponding controllers for the request.
+The *server.js* file start the server and listen for requests. All the call to the server is handled by the *router.js* file in *'app/routes/'*.
+*router.js* calls the corresponding controllers for the request.
 
 1. On user registeration it will call the signup module in *register.js* ('app/controllers/'). 
 The signup module handels the registeration of the user.
@@ -41,3 +41,6 @@ $ bower install
 ```
 $ npm start
 ```
+### Setup an https secure connection
+ 1. Import *ca.crt* file from 'ssl/' into your browser's certificate manager.
+ ![certificate Manager](images/certificate_manager.png)
