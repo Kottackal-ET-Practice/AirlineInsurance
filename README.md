@@ -18,7 +18,7 @@ The *server.js* file start the server and listen for requests. All the call to t
 The signup module handles the registration of the user.
 The database schema is mentioned in the *login.js* ('app/models/').
 2. On user login it will call the signin module in *login.js* ('app/controllers/').
-The signin module do the authentication check for the user.
+The signin module does the authentication check for the user.
 The database schema is mentioned in the *login.js* ('app/models/').
 3. For quote generation it will transfer the call to *quote.js* ('app/controllers/').
 The quote controller fetches the data from the weather API and generates the quote.
