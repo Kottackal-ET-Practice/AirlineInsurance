@@ -31,7 +31,7 @@ The createInsurance stores the details in the database.
 The database schema is mentioned in the *insurance.js* ('app/models/').
 
 ## File Structure
-![File Structure](./images/filestructure.xcf)
+![File Structure](./images/filestructure.png)
 
 ## Quick Start
 
